@@ -3,24 +3,26 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { Usuario } from '../model/usuarios/usuarios.module';
-import 'dotenv/config';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  private apiUrl = 'api/usuarios/login'; // Aquí defines la URL base del backend
-  private appUrl = process.env['API_URL']; // URL del servidor de desarrollo de .NET Core
+ 
+  private appUrl = environment.API_URL; 
 
   constructor(private http: HttpClient) { }
 
   getAllUsuarios(): Observable<any> {
-    return this.http.get<any>(this.appUrl + this.apiUrl);
+    const apiUrl = 'api/usuarios/';
+    return this.http.get<any>(this.appUrl + apiUrl);
   }
 
   login(credentials: any) {
-    return this.http.post<any>(this.appUrl + this.apiUrl, credentials);
+    const apiUrl = 'api/usuarios/login';
+    return this.http.post<any>(environment.API_URL + apiUrl, credentials);
   }
 }
 

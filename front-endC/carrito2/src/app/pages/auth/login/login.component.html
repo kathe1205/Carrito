@@ -1,0 +1,20 @@
+<div class="login-container">
+    <div class="image-section" style="background-color: rgb(238, 182, 229);">
+    </div>
+    <div class="form-section" style="margin-left: 60px;">
+      <img style="width: 150px; height: 100px;" src="https://i.pinimg.com/originals/43/9f/b1/439fb1b2941faf89392fa3ddd1879719.png" alt="Imagen de fondo"><br>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill" class="form-group" style="width: 100%; margin-top: 10px;">
+          <mat-label>Usuario</mat-label>
+          <input matInput type="text" id="usuario" formControlName="email" placeholder="Ingresa tu usuario">
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="form-group" style="width: 100%; margin-top: 10px;">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" id="contrasenia" formControlName="password" placeholder="Ingresa tu contraseña">
+        </mat-form-field>
+  
+        <button mat-button class="custom-button" type="submit"> <strong>Iniciar sesión</strong></button>
+      </form>
+    </div>
+  </div>

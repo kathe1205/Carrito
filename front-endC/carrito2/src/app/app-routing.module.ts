@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
+import { CreateProductoComponent } from './pages/proveedores/create/create.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     path:'proveedores',
     component:ProveedoresComponent
   },
+  { path: 'proveedores/create', component: CreateProductoComponent },
 ];
 
 @NgModule({
